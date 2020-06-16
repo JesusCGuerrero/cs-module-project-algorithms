@@ -1,12 +1,28 @@
+import math
 '''
 Input: a List of integers
 Returns: a List of integers
 '''
+
 def product_of_all_other_numbers(arr):
-    # Your code here
-
-    pass
-
+    # Create a new empty array
+    newArr = []
+    # Loop for each item in the array
+    for i in range(0, len(arr)):
+        # Copy the array
+        copy = arr.copy()
+        # On each pass, the value at that index becomes 1, so that it won't affect the multiplication
+        copy[i] = 1
+        # Set the total to 1 so that we can replace it with the product of the copied array
+        total = 1
+        # Loop over each item in the copy array
+        for val in copy:
+            # Set the total to the product of each value in the copy array
+            total = total * val
+            # Append the total for the current iteration into the new array
+        newArr.append(total)
+    # Return the new array after all the loops have run
+    return newArr
 
 if __name__ == '__main__':
     # Use the main function to test your implementation
